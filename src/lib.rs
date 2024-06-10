@@ -174,7 +174,7 @@ pub(crate) mod thread_assert {
         }
     }
 }
-struct Context {
+pub struct Context {
     pub audio_context: audio::AudioContext,
 
     pub screen_width: f32,
