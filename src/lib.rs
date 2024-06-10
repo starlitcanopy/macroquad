@@ -479,7 +479,7 @@ pub mod test {
     pub static ONCE: std::sync::Once = std::sync::Once::new();
 }
 
-fn get_context() -> &'static mut Context {
+pub fn get_context() -> &'static mut Context {
     thread_assert::same_thread();
 
     unsafe { CONTEXT.as_mut().unwrap_or_else(|| panic!()) }
