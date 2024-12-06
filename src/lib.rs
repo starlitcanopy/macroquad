@@ -175,60 +175,60 @@ pub(crate) mod thread_assert {
     }
 }
 struct Context {
-    audio_context: audio::AudioContext,
+    pub audio_context: audio::AudioContext,
 
-    screen_width: f32,
-    screen_height: f32,
+    pub screen_width: f32,
+    pub screen_height: f32,
 
-    simulate_mouse_with_touch: bool,
+    pub simulate_mouse_with_touch: bool,
 
-    keys_down: HashSet<KeyCode>,
-    keys_pressed: HashSet<KeyCode>,
-    keys_released: HashSet<KeyCode>,
-    mouse_down: HashSet<MouseButton>,
-    mouse_pressed: HashSet<MouseButton>,
-    mouse_released: HashSet<MouseButton>,
-    touches: HashMap<u64, input::Touch>,
-    chars_pressed_queue: Vec<char>,
-    chars_pressed_ui_queue: Vec<char>,
-    mouse_position: Vec2,
-    last_mouse_position: Option<Vec2>,
-    mouse_wheel: Vec2,
+    pub keys_down: HashSet<KeyCode>,
+    pub keys_pressed: HashSet<KeyCode>,
+    pub keys_released: HashSet<KeyCode>,
+    pub mouse_down: HashSet<MouseButton>,
+    pub mouse_pressed: HashSet<MouseButton>,
+    pub mouse_released: HashSet<MouseButton>,
+    pub touches: HashMap<u64, input::Touch>,
+    pub chars_pressed_queue: Vec<char>,
+    pub chars_pressed_ui_queue: Vec<char>,
+    pub mouse_position: Vec2,
+    pub last_mouse_position: Option<Vec2>,
+    pub mouse_wheel: Vec2,
 
-    prevent_quit_event: bool,
-    quit_requested: bool,
+    pub prevent_quit_event: bool,
+    pub quit_requested: bool,
 
-    cursor_grabbed: bool,
+    pub cursor_grabbed: bool,
 
-    input_events: Vec<Vec<MiniquadInputEvent>>,
+    pub input_events: Vec<Vec<MiniquadInputEvent>>,
 
-    gl: QuadGl,
-    camera_matrix: Option<Mat4>,
+    pub gl: QuadGl,
+    pub camera_matrix: Option<Mat4>,
 
-    ui_context: UiContext,
-    coroutines_context: experimental::coroutines::CoroutinesContext,
-    fonts_storage: text::FontsStorage,
+    pub ui_context: UiContext,
+    pub coroutines_context: experimental::coroutines::CoroutinesContext,
+    pub fonts_storage: text::FontsStorage,
 
-    pc_assets_folder: Option<String>,
+    pub pc_assets_folder: Option<String>,
 
-    start_time: f64,
-    last_frame_time: f64,
-    frame_time: f64,
+    pub start_time: f64,
+    pub last_frame_time: f64,
+    pub frame_time: f64,
 
     #[cfg(one_screenshot)]
-    counter: usize,
+    pub counter: usize,
 
-    camera_stack: Vec<camera::CameraState>,
-    texture_batcher: texture::Batcher,
-    unwind: bool,
-    recovery_future: Option<Pin<Box<dyn Future<Output = ()>>>>,
+    pub camera_stack: Vec<camera::CameraState>,
+    pub texture_batcher: texture::Batcher,
+    pub unwind: bool,
+    pub recovery_future: Option<Pin<Box<dyn Future<Output = ()>>>>,
 
-    quad_context: Box<dyn miniquad::RenderingBackend>,
+    pub quad_context: Box<dyn miniquad::RenderingBackend>,
 
-    default_filter_mode: crate::quad_gl::FilterMode,
-    textures: crate::texture::TexturesContext,
+    pub default_filter_mode: crate::quad_gl::FilterMode,
+    pub textures: crate::texture::TexturesContext,
 
-    update_on: conf::UpdateTrigger,
+    pub update_on: conf::UpdateTrigger,
 }
 
 #[derive(Clone)]
