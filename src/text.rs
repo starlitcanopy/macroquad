@@ -465,8 +465,8 @@ pub fn measure_text(
     font.measure_text(text, font_size, font_scale, font_scale)
 }
 
-pub(crate) struct FontsStorage {
-    default_font: Font,
+pub struct FontsStorage {
+    pub default_font: Font,
 }
 
 impl FontsStorage {
