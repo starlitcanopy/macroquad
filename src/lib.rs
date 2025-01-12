@@ -121,6 +121,7 @@ pub use error::Error;
 ///     }
 /// }
 /// ```
+#[cfg(feature = "macro")]
 pub use macroquad_macro::main;
 
 /// #[macroquad::test] fn test() {}
@@ -128,6 +129,7 @@ pub use macroquad_macro::main;
 /// Very similar to macroquad::main
 /// Right now it will still spawn a window, just like ::main, therefore
 /// is not really useful for anything than developping macroquad itself
+#[cfg(feature = "macro")]
 #[doc(hidden)]
 pub use macroquad_macro::test;
 

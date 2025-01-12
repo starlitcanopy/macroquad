@@ -2,6 +2,7 @@ use std::{any::Any, marker::PhantomData, ops::Drop};
 
 use crate::camera::Camera2D;
 
+#[cfg(feature = "macro")]
 pub use macroquad_macro::CapabilityTrait;
 
 mod arena;
