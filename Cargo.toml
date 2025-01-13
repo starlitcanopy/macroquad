@@ -11,6 +11,9 @@ Simple and easy to use graphics library
 readme="README.md"
 license = "MIT OR Apache-2.0"
 
+[lib]
+crate-type = ["rlib", "dylib"]
+
 [features]
 audio = ["quad-snd"]
 log-rs = ["log"]
